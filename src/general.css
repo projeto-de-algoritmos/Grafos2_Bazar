@@ -1,3 +1,19 @@
 body {
   margin: 0;
 }
+
+.header {
+  background-color: #f2d8a7;
+  height: 30px;
+  width: 100%;
+}
+
+.buttonPosition {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+}

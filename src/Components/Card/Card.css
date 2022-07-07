@@ -1,5 +1,18 @@
-.container {
-  background-color: black;
-  height: 30px;
-  width: 80px;
+.containerCard {
+  height: 220px;
+  width: 200px;
+  display: contents;
+}
+
+.imageCard {
+  width: 200px;
+  height: 220px;
+  margin: 10px;
+}
+
+.imageCardActive {
+  width: 200px;
+  height: 220px;
+  margin: 10px;
+  border: 8px solid greenyellow;
 }

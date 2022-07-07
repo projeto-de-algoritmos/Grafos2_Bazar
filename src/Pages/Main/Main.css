@@ -1,18 +1,17 @@
-.header {
-  background-color: #f2d8a7;
-  height: 30px;
-  width: 100%;
-}
-
-.title {
+.titleMain {
   font-size: 40px;
   display: flex;
   justify-content: center;
 }
 
-.text {
+.textMain {
   font-size: 20px;
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 10px;
+}
+
+.cardMain {
+  display: flex;
 }

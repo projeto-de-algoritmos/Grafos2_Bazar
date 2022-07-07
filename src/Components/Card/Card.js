@@ -1,10 +1,10 @@
 import "./Card.css";
 
-const Card = () => {
+const Card = ({ imagem, imageClassName, onClick, id }) => {
   return (
-    <>
-      <div className="container" />
-    </>
+    <div id={id} className="containerCard" onClick={onClick}>
+      <img src={imagem} className={imageClassName} alt={id}/>
+    </div>
   );
 };
 

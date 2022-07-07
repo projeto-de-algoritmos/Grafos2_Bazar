@@ -3,7 +3,7 @@ import "./Result.css";
 const Result = () => {
   return (
     <>
-      <div className="container" />
+      <div className="containerResult" />
     </>
   );
 };
