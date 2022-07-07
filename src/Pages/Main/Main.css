@@ -1,0 +1,18 @@
+.header {
+  background-color: #f2d8a7;
+  height: 30px;
+  width: 100%;
+}
+
+.title {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
