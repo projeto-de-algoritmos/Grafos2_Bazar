@@ -14,6 +14,16 @@ const clothes = [
     imagem:
       "https://user-images.githubusercontent.com/52640974/177677294-5a73466f-30a2-4119-b7c1-f0125670ac72.jpeg",
   },
+  {
+    id: "Calca2",
+    imagem:
+      "https://user-images.githubusercontent.com/52640974/177675800-0196e589-2708-4d8c-b172-0815e30e36da.jpeg",
+  },
+  {
+    id: "Saia2",
+    imagem:
+      "https://user-images.githubusercontent.com/52640974/177677294-5a73466f-30a2-4119-b7c1-f0125670ac72.jpeg",
+  },
 ];
 
 export default clothes;

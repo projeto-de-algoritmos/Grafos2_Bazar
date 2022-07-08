@@ -5,16 +5,19 @@ import clothes from "../../Services/mock";
 
 const Main = () => {
   const [clothesMap] = useState(clothes);
-  const [isActive, setIsActive] = useState(false);
+  const [clickedIndex, setClickedIndex] = useState({});
 
-  const handleClick = () => {
-    setIsActive((current) => !current);
+  const handleClick = (index) => () => {
+    setClickedIndex((state) => ({
+      ...state,
+      [index]: !state[index],
+    }));
   };
 
   return (
     <>
       <div className="header" />
-      <div className="titleMain">Bazar</div>
+      <div className="title">Bazar</div>
       <div className="textMain">
         Selecione 2 peças que você deseja verificar, para gerar o menor valor
         entre elas
@@ -26,10 +29,12 @@ const Main = () => {
         {clothesMap.map((item, index) => {
           return (
             <Card
-              imageClassName={isActive ? "imageCardActive" : "imageCard"}
+              imageClassName={
+                clickedIndex[index] ? "imageCardActive" : "imageCard"
+              }
               key={index}
               id={item.id}
-              onClick={handleClick}
+              onClick={handleClick(index)}
               imagem={item.imagem}
             />
           );

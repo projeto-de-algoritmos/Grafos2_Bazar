@@ -1,17 +1,15 @@
-.titleMain {
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-}
-
 .textMain {
   font-size: 20px;
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .cardMain {
-  display: flex;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
