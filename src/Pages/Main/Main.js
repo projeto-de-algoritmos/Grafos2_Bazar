@@ -16,9 +16,9 @@ const Main = () => {
     return options.push(item);
   });
 
-  const inforBazars = bazares.map((item) => {
+  const inforBazars = bazares.map((item, index) => {
     return (
-      <div className="itensMain">
+      <div key={index} className="itensMain">
         <b>Bazar:</b> {item.nome}
         <br />
         <b>Local:</b> {item.capital}
