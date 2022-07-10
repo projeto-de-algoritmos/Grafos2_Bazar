@@ -1,44 +1,35 @@
-import { useState } from "react";
 import "./Main.css";
-import { Card, Button } from "../../Components";
-import clothes from "../../Services/mock";
+import { Button } from "../../Components";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import places from "../../Services/mock";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
-  const [clothesMap] = useState(clothes);
-  const [clickedIndex, setClickedIndex] = useState({});
+  const options = [];
+  const navigate = useNavigate();
 
-  const handleClick = (index) => () => {
-    setClickedIndex((state) => ({
-      ...state,
-      [index]: !state[index],
-    }));
-  };
+  places.map((item) => {
+    return options.push(item.id);
+  });
 
   return (
     <>
       <div className="header" />
       <div className="title">Bazar</div>
       <div className="textMain">
-        Selecione 2 peças que você deseja verificar, para gerar o menor valor
-        entre elas
+        Selecione a cidade do DF que você deseja encontrar o bazar mais próximo.
       </div>
       <div className="buttonPosition">
-        <Button text="Verificar" />
+        <Button
+          text="Pesquisar"
+          onClick={() => {
+            navigate("/resultado", { state: { value: 20 } });
+          }}
+        />
       </div>
-      <div className="cardMain">
-        {clothesMap.map((item, index) => {
-          return (
-            <Card
-              imageClassName={
-                clickedIndex[index] ? "imageCardActive" : "imageCard"
-              }
-              key={index}
-              id={item.id}
-              onClick={handleClick(index)}
-              imagem={item.imagem}
-            />
-          );
-        })}
+      <div className="placesMain">
+        <Dropdown options={options} placeholder="Selecione uma cidade" />
       </div>
     </>
   );

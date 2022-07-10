@@ -1,21 +1,27 @@
 import "./Result.css";
 import { Button } from "../../Components";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const Result = ({ value }) => {
+const Result = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <>
       <div className="header" />
       <div className="title">Bazar</div>
       <div className="textResult">
-        Menor preço entre as peças selecionadas é de{" "}
-        {value
-          ? value === 1
-            ? value + " real"
-            : value + " reais"
-          : 0 + " reais"}
+        {location.state
+          ? `Menor distância para chegar a um bazar é de ${location.state.value} km.`
+          : "Erro, aperte o botão de pesquisar novamente"}
       </div>
       <div className="buttonPosition">
-        <Button text="Ver novas roupas" />
+        <Button
+          text="Pesquisar novamente"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
     </>
   );
