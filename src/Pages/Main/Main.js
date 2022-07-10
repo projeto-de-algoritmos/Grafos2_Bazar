@@ -2,37 +2,40 @@ import "./Main.css";
 import { Button } from "../../Components";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import places from "../../Services/mock";
-import { capitais, bazares } from "../../Services/capitais"
-import Solution from '../../Services/dijkstra'
+import { capitais, bazares } from "../../Services/capitais";
+import Solution from "../../Services/dijkstra";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Main = () => {
   const options = [];
-  //const nomesBazars = [];
   const navigate = useNavigate();
-  //const [result, setResult] = useState(0);
-  const [inicio, setInicio] = useState('');
+  const [inicio, setInicio] = useState("");
 
   capitais.map((item) => {
     return options.push(item);
   });
 
   const inforBazars = bazares.map((item) => {
-    return (<>
-      <li>Bazar: {item.nome}</li>
-      <li>Local: {item.capital}</li>
-      <br />
-    </>)
+    return (
+      <div className="itensMain">
+        <b>Bazar:</b> {item.nome}
+        <br />
+        <b>Local:</b> {item.capital}
+      </div>
+    );
   });
-
 
   const handleBazarMaisProximo = () => {
     const result = Solution.menorDistancia(inicio);
-    navigate("/resultado", { state: { nome: result.nome, capital: result.capital, distancia: result.distancia } });
-
-  }
+    navigate("/resultado", {
+      state: {
+        nome: result.nome,
+        capital: result.capital,
+        distancia: result.distancia,
+      },
+    });
+  };
 
   return (
     <>
@@ -40,10 +43,11 @@ const Main = () => {
       <div className="title">Bazar</div>
       <div className="textMain">
         Essas são as listas dos Bazares em todo o Brasil
-        <ul>{inforBazars}</ul>
       </div>
+      <div className="listMain">{inforBazars}</div>
       <div className="textMain">
-        Selecione a cidade do DF que você deseja encontrar o bazar mais próximo.
+        Selecione a capital da qual você deseja partir, e assim, encontrar o
+        Bazar mais próximo de onde você mora.
       </div>
       <div className="buttonPosition">
         <Button
@@ -52,7 +56,11 @@ const Main = () => {
         />
       </div>
       <div className="placesMain">
-        <Dropdown options={options} onChange={(opion) => setInicio(opion.value)} placeholder="Selecione de qual capitual deseja partir" />
+        <Dropdown
+          options={options}
+          onChange={(opion) => setInicio(opion.value)}
+          placeholder="Selecione a capital"
+        />
       </div>
     </>
   );
