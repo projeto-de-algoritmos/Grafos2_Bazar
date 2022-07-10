@@ -11,16 +11,18 @@ import { useState } from "react";
 const Main = () => {
   const options = [];
   const navigate = useNavigate();
-  const [result, setResult] = useState(0);
+  //const [result, setResult] = useState(0);
+  const [bazar, setBazar] = useState('');
 
   capitais.map((item) => {
     return options.push(item);
   });
 
-  const handleBazarMaisProximo = (starting) => {
+  const handleBazarMaisProximo = () => {
     const destiny = locaisBazar[1]
-    const result = Solution.question(starting, destiny);
-    setResult(result);
+    console.log("ESSA É A OPCAO DE BAZAR", bazar)
+    const result = Solution.question(bazar, destiny);
+    //setResult(result);
     navigate("/resultado", { state: { value: result } });
 
   }
@@ -39,7 +41,7 @@ const Main = () => {
         />
       </div>
       <div className="placesMain">
-        <Dropdown options={options} placeholder="Selecione de qual capitual deseja partir" />
+        <Dropdown options={options} onChange={(opion) => setBazar(opion.value)} placeholder="Selecione de qual capitual deseja partir" />
       </div>
     </>
   );
