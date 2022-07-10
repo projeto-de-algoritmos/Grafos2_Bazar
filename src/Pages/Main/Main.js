@@ -3,15 +3,27 @@ import { Button } from "../../Components";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import places from "../../Services/mock";
+import { locaisBazar, capitais } from "../../Services/capitais"
+import Solution from '../../Services/dijkstra'
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Main = () => {
   const options = [];
   const navigate = useNavigate();
+  const [result, setResult] = useState(0);
 
-  places.map((item) => {
-    return options.push(item.id);
+  capitais.map((item) => {
+    return options.push(item);
   });
+
+  const handleBazarMaisProximo = (starting) => {
+    const destiny = locaisBazar[1]
+    const result = Solution.question(starting, destiny);
+    setResult(result);
+    navigate("/resultado", { state: { value: result } });
+
+  }
 
   return (
     <>
@@ -23,13 +35,11 @@ const Main = () => {
       <div className="buttonPosition">
         <Button
           text="Pesquisar"
-          onClick={() => {
-            navigate("/resultado", { state: { value: 20 } });
-          }}
+          onClick={() => handleBazarMaisProximo(options)}
         />
       </div>
       <div className="placesMain">
-        <Dropdown options={options} placeholder="Selecione uma cidade" />
+        <Dropdown options={options} placeholder="Selecione de qual capitual deseja partir" />
       </div>
     </>
   );
