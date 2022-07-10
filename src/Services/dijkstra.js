@@ -1,8 +1,20 @@
-import { capitais, weights } from '../Services/capitais'
+import { capitais, weights, locaisBazar } from '../Services/capitais'
 
 class Solution {
-  static question(start_location, destination) {
 
+  static menorDistancia(start_location) {
+    let menoresDistancias = [];
+    for (let i = 0; i < locaisBazar.length; i++) {
+      menoresDistancias.push(this.question(start_location, locaisBazar[i]));
+    }
+    menoresDistancias.forEach(item => {
+      console.log("RETORNOS ", item)
+    })
+    let menor = Math.min(...menoresDistancias);
+    console.log("Esse é o menor", menor)
+    return menor;
+  }
+  static question(start_location, destination) {
     let visited = new Map();
     let maxHeap = new MaxHeap();
     maxHeap.insert([start_location, 0])

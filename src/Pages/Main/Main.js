@@ -19,10 +19,8 @@ const Main = () => {
   });
 
   const handleBazarMaisProximo = () => {
-    const destiny = locaisBazar[1]
     console.log("ESSA É A OPCAO DE BAZAR", bazar)
-    const result = Solution.question(bazar, destiny);
-    //setResult(result);
+    const result = Solution.menorDistancia(bazar);
     navigate("/resultado", { state: { value: result } });
 
   }
