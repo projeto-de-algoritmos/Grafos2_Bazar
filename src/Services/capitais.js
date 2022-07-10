@@ -27,7 +27,15 @@ export const capitais = [
   "Vitória"
 ]
 
-export const pesosCapitais = {
+export const locaisBazar = [
+  "São Paulo",
+  "Curitiba",
+  "Salvador",
+  "Manaus",
+  "Porto Alegre",
+]
+
+export const weights = {
   "Aracajú:Aracajú": 0,
   "Belém:Aracajú": 2079,
   "Belém:Belém": 0,
