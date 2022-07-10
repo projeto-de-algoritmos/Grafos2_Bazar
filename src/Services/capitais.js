@@ -27,12 +27,13 @@ export const capitais = [
   "Vitória"
 ]
 
-export const locaisBazar = [
-  "São Paulo",
-  "Curitiba",
-  "Salvador",
-  "Manaus",
-  "Porto Alegre",
+export const bazares = [
+  { id: 0, nome: 'Bazar do Lar', capital: 'São Paulo' },
+  { id: 1, nome: 'MitzBazar', capital: 'Curitiba' },
+  { id: 2, nome: 'Bazarlane', capital: 'Salvador' },
+  { id: 3, nome: 'Puro Bazar', capital: 'Manaus' },
+  { id: 4, nome: 'ShipShop', capital: 'Porto Alegre' },
+
 ]
 
 export const weights = {

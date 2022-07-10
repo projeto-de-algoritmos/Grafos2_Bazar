@@ -1,19 +1,25 @@
-import { capitais, weights, locaisBazar } from '../Services/capitais'
+import { capitais, weights, bazares } from '../Services/capitais'
 
 class Solution {
 
   static menorDistancia(start_location) {
     let menoresDistancias = [];
-    for (let i = 0; i < locaisBazar.length; i++) {
-      menoresDistancias.push(this.question(start_location, locaisBazar[i]));
+    for (let i = 0; i < bazares.length; i++) {
+      menoresDistancias.push(this.question(start_location, bazares[i].capital));
     }
-    menoresDistancias.forEach(item => {
-      console.log("RETORNOS ", item)
-    })
+
+    let distanciaBazares = [];
+    for (let i = 0; i < bazares.length; i++) {
+      distanciaBazares = [...distanciaBazares, { ...bazares[i], distancia: menoresDistancias[i] }]
+    }
+
+    console.log(distanciaBazares)
     let menor = Math.min(...menoresDistancias);
-    console.log("Esse é o menor", menor)
-    return menor;
+    const resposta = distanciaBazares.filter((e) => e.distancia === menor)
+    console.log("Esse é o menor", resposta)
+    return resposta[0];
   }
+
   static question(start_location, destination) {
     let visited = new Map();
     let maxHeap = new MaxHeap();

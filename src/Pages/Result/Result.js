@@ -12,7 +12,7 @@ const Result = () => {
       <div className="title">Bazar</div>
       <div className="textResult">
         {location.state
-          ? `Menor distância para chegar a um bazar é de ${location.state.value} km.`
+          ? `O Bazar mais próximo de voce é o ${location.state.nome} que está a uma distância de ${location.state.distancia} km, localizado em ${location.state.capital}.`
           : "Erro, aperte o botão de pesquisar novamente"}
       </div>
       <div className="buttonPosition">
