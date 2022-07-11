@@ -9,7 +9,7 @@
 | 18/0052616 | Estevão de Jesus Reis |
 
 ## Sobre 
-Nosso projeto baseia-se na ideia de encontrar o bazar mais próximo da localidade de partida colocada pelo usuário, mostrando a capital e a quilometragem. A ideia do bazar surgiu pois cada vez mais bazar e brechós estão sendo procurados com maior frequência, então por isso foi feito o projeto neste tema.
+Nosso projeto baseia-se na ideia de encontrar o bazar mais próximo da localidade de partida colocada pelo usuário, mostrando a capital resultante e a quilometragem de distância. A ideia do bazar surgiu pois cada vez mais bazar e brechós estão sendo procurados com maior frequência, então por isso foi feito o projeto neste tema.
 
 ## Screenshots
 ![Screenshot from 2022-07-11 18-50-01](https://user-images.githubusercontent.com/52640974/178364888-80f58232-942e-4d3a-a13e-b9fa4eecaa87.png)
@@ -23,7 +23,7 @@ Nosso projeto baseia-se na ideia de encontrar o bazar mais próximo da localidad
 
 É preciso ter o [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) instalado.
 
-Logo após ter o yarn rode:
+Logo após ter o yarn, rode:
 
 ```
 yarn
